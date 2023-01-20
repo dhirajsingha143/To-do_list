@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 90%;
 }
 
 .toDo_list {
@@ -132,4 +132,14 @@ body {
 
 .completed {
   text-decoration: line-through;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 900;
+  background-color: var(--black);
+  height: 10%;
 }
