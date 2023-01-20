@@ -1,3 +1,23 @@
-body {
-  background-color: aqua;
+/* Default style */
+
+html {
+  box-sizing: border-box;
 }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* List-Container-Section  */
+
+
+
+
