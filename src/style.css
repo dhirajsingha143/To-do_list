@@ -25,7 +25,6 @@ body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  background-color: var(--border);
 }
 
 /* List-Container-Section  */
@@ -72,7 +71,7 @@ body {
   margin-top: 14px;
   padding: 0 14px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .toDo_list_ul {
@@ -101,14 +100,6 @@ body {
   color: black;
 }
 
-.todo-list-li-text:hover {
-  background-color: var(--to_do);
-}
-
-.todo-list-li-text:focus {
-  background-color: var(--to_do);
-}
-
 .todo-list-li-cross {
   padding-right: 5px;
   cursor: pointer;
@@ -121,9 +112,10 @@ body {
   margin: 14px 0 0 0;
   border: none;
   cursor: pointer;
-  background-color: var(--background_btn);
-  color: var(--white);
+  background-color: var(--border);
+  color: var(--background_btn);
   outline: none;
+  font-size: 20px;
 }
 
 .clearbtn:hover {
