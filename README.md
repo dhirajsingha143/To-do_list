@@ -1,4 +1,4 @@
-# Awesome Books-Project using ES6
+# To-do List project
 
 <a name="readme-top"></a>
 
@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awesome Books-Project Setup <a name="about-project"></a>
+# 📖 To-do List project setup <a name="about-project"></a>
 
-In this project, I have build a simple HTML list of To Do tasks. This simple web page will be built using webpack and served by a webpack dev server. Also implemented the CRUD (create, read, update, delete) methods. All the elements of the user interface are fully functional and completed.
+In this project, I have build a To Do tasks web-application. This simple web page will be built using webpack and served by a webpack dev server. Also implemented the CRUD (create, read, update, delete) methods. All the elements of the user interface are fully functional and completed. Add some functionality to the application to make it interactive. The user will also be able to mark task completion by selecting the corresponding checkbox (or undo it by unchecking the checkbox). The updated tasks list will be stored in local storage.
 
 ## 🛠 Built With <a name="built-with"></a>
 
