@@ -88,6 +88,17 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .mainlist {
   display: flex;
   gap: 10px;
@@ -99,8 +110,6 @@ body {
 }
 
 .todo-list-li-text {
-  /* stylelint-disable-next-line */
-  width: -webkit-fill-available;
   padding: 0 7px;
   background-color: var(--white);
   border: none;

@@ -34,9 +34,11 @@ ListData.innerHTML = '';
 
 ToDoData.forEach((element) => {
   ListData.innerHTML += `
-        <div class="mainlist">
-        <input type="checkbox" class="check">
-        <p class="listitem">${element.descripttion}</p>
+        <div class="list-container">
+          <div class="mainlist">
+            <input type="checkbox" class="check">
+            <p class="listitem">${element.descripttion}</p>
+          </div>
         <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
         </div>
        `;
