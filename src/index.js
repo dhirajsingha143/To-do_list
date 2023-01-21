@@ -70,6 +70,17 @@ const deleteTask = (e, toDoListArray) => {
   renderToDoList(toDoListArray);
 };
 
+const markTask = (e, toDoListArray) => {
+  const clickedCheckbox = e.target.closest('.todo-list-li-checkbox');
+  const clickedTask = clickedCheckbox.nextElementSibling;
+  const taskIndex = toDoListArray.findIndex(
+    (task) => task.task === clickedTask.value,
+  );
+  toDoListArray[taskIndex].completed = !toDoListArray[taskIndex].completed;
+  updateLocalStorage(toDoListArray);
+  renderToDoList(toDoListArray);
+};
+
 const input = document.querySelector('.task-input');
 const todoList = document.querySelector('.toDo_list_ul');
 const addTaskBtn = document.querySelector('.add_btn');
