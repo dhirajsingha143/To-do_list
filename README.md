@@ -29,7 +29,7 @@
 
 # 📖 Awesome Books-Project Setup <a name="about-project"></a>
 
-In this project, I have build a simple HTML list of To Do tasks. This simple web page will be built using webpack and served by a webpack dev server.
+In this project, I have build a simple HTML list of To Do tasks. This simple web page will be built using webpack and served by a webpack dev server. Also implemented the CRUD (create, read, update, delete) methods. All the elements of the user interface are fully functional and completed.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,7 +42,7 @@ In this project, I have build a simple HTML list of To Do tasks. This simple web
     <li>CSS</li>
     <li>JS</li>
     <li>.md</li>
-    <li>Webpack<li>
+    <li>Webpack</li>
   </ul>
 </details>
 
@@ -108,7 +108,7 @@ To run the project, execute the following command:
 ### 🔮 Future Features <a name="future-features"></a>
 
 - More better UI.
-- Improve features for adding and clearing list.
+- Clear all button will be functional.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
