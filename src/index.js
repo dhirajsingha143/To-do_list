@@ -1,45 +1,41 @@
 import './style.css';
 
-const ListData = document.querySelector('.toDo_list_ul');
+const toDoList = document.querySelector('.toDo_list_ul');
 
-const ToDoData = [
-  {
-    index: 0,
-    descripttion: 'Wash Laptop with Detergent',
-    completed: false,
-  },
-  {
-    index: 1,
-    descripttion: 'Inject Bug in Facebook Server',
-    completed: false,
-  },
-  {
-    index: 2,
-    descripttion: 'Chat with Aliens',
-    completed: false,
-  },
-  {
-    index: 3,
-    descripttion: "Hack someone's Bank Account",
-    completed: false,
-  },
-  {
-    index: 4,
-    descripttion: 'Wait for PR to be Approved',
-    completed: false,
-  },
-];
+const addTask = (toDoListArray, task) => {
+  toDoListArray.push({ task, id: toDoListArray.length + 1 });
+};
 
-ListData.innerHTML = '';
+const renderToDoList = (toDoListArray) => {
+  toDoList.innerHTML = '';
 
-ToDoData.forEach((element) => {
-  ListData.innerHTML += `
-        <div class="list-container">
-          <div class="mainlist">
-            <input type="checkbox" class="check">
-            <p class="listitem">${element.descripttion}</p>
-          </div>
-        <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
-       `;
-});
+  toDoListArray = getLocalStorage();
+
+  toDoListArray.forEach((toDo) => {
+    const toDoItem = document.createElement('li');
+    toDoItem.classList.add('todo-list-li');
+
+    const toDoCheckbox = document.createElement('input');
+    toDoCheckbox.classList.add('todo-list-li-checkbox');
+    toDoCheckbox.type = 'checkbox';
+    toDoCheckbox.checked = toDo.completed;
+    toDoItem.appendChild(toDoCheckbox);
+
+    const toDoText = document.createElement('input');
+    toDoText.classList.add('todo-list-li-text');
+    toDoText.value = toDo.task;
+    // toDoText.disabled = true;
+    toDoItem.appendChild(toDoText);
+
+    if (toDo.completed) {
+      toDoText.classList.add('completed');
+    }
+
+    const crossIcon = document.createElement('span');
+    crossIcon.classList.add('todo-list-li-cross');
+    crossIcon.innerHTML = 'x';
+    toDoItem.appendChild(crossIcon);
+
+    toDoList.appendChild(toDoItem);
+  });
+};
