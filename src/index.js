@@ -67,7 +67,7 @@ const editTask = (e, toDoListArray) => {
         (task) => task.task === taskText,
       );
       toDoListArray[taskIndex].task = clickedTask.value;
-      clickedTask.disabled = true;
+      clickedTask.disabled = false;
       updateLocalStorage(toDoListArray);
       renderToDoList(toDoListArray);
     }
@@ -94,7 +94,7 @@ const markTask = (e, toDoListArray) => {
   const taskIndex = toDoListArray.findIndex(
     (task) => task.task === clickedTask.value,
   );
-  toDoListArray[taskIndex].completed = !toDoListArray[taskIndex].completed;
+  toDoListArray[taskIndex].completed = !toDoListArray[taskIndex];
   updateLocalStorage(toDoListArray);
   renderToDoList(toDoListArray);
 };
