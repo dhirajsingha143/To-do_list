@@ -1,5 +1,21 @@
 import './style.css';
 
+const updateLocalStorage = (toDoListArray) => {
+  localStorage.setItem('toDoList', JSON.stringify(toDoListArray));
+};
+
+const getLocalStorage = () => {
+  const localStorageData = JSON.parse(localStorage.getItem('toDoList'));
+  let toDoListArray;
+  if (localStorageData) {
+    toDoListArray = localStorageData;
+  } else {
+    toDoListArray = [];
+  }
+  return toDoListArray;
+};
+
+const toDoTasks = getLocalStorage();
 const toDoList = document.querySelector('.toDo_list_ul');
 
 const addTask = (toDoListArray, task) => {
@@ -39,3 +55,59 @@ const renderToDoList = (toDoListArray) => {
     toDoList.appendChild(toDoItem);
   });
 };
+
+const deleteTask = (e, toDoListArray) => {
+  const clickedCross = e.target.closest('.todo-list-li-cross');
+  const clickedTask = clickedCross.previousElementSibling;
+  const taskIndex = toDoListArray.findIndex(
+    (task) => task.task === clickedTask.value,
+  );
+  toDoListArray.splice(taskIndex, 1);
+  toDoListArray.forEach((task, index) => {
+    task.id = index + 1;
+  });
+  updateLocalStorage(toDoListArray);
+  renderToDoList(toDoListArray);
+};
+
+const input = document.querySelector('.task-input');
+const todoList = document.querySelector('.toDo_list_ul');
+const addTaskBtn = document.querySelector('.add_btn');
+
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && input.value !== '') {
+    addTask(toDoTasks, input.value);
+    input.value = '';
+    updateLocalStorage(toDoTasks);
+    renderToDoList(toDoTasks);
+  }
+});
+
+addTaskBtn.addEventListener('click', () => {
+  if (input.value !== '') {
+    addTask(toDoTasks, input.value);
+    input.value = '';
+    updateLocalStorage(toDoTasks);
+    renderToDoList(toDoTasks);
+  }
+});
+
+todoList.addEventListener('click', (e) => {
+  if (e.target.closest('.todo-list-li-checkbox')) {
+    markTask(e, toDoTasks);
+  }
+});
+
+todoList.addEventListener('click', (e) => {
+  if (e.target.closest('.todo-list-li-text')) {
+    editTask(e, toDoTasks);
+  }
+});
+
+todoList.addEventListener('click', (e) => {
+  if (e.target.closest('.todo-list-li-cross')) {
+    deleteTask(e, toDoTasks);
+  }
+});
+
+renderToDoList(toDoTasks);
